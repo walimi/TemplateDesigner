@@ -8,43 +8,63 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template Designer Demo</title>
+    <title>Float grid demo</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.css"/>
     <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack-extra.css"/>
-    <link rel="stylesheet" href="//localhost/ExampleCode/TemplateDesigner/template_designer.css" />
+
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
     <script src="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.js"></script>
-    <script src="//localhost/ExampleCode/TemplateDesigner/template_designer.js"></script>
 
 
+    <style type="text/css">
+        .grid-stack {
+            background: lightgoldenrodyellow;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Template Designer Demo</h1>
-        <div class="row">
-            <div class="col-md-2">
-                <div class="palette">
-                    <div class="grid-stack grid-stack-6" id="grid1">
-                        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
-                            <div class="grid-stack-item-content" id="header">Header</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="grid-stack grid-stack-6" id="grid2">
-                    <div class="grid-stack-item"  data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
-                        <div class="grid-stack-item-content">hello mars</div>
-                    </div>
-                </div>
-            </div>
+        <h1>Float grid demo</h1>
+
+        <div>
+            <a class="btn btn-default" id="add-new-widget" href="#">Add Header</a>
+        </div>
+
+        <br/>
+
+        <div class="grid-stack">
         </div>
     </div>
+
+
+    <script type="text/javascript">
+        $(function () {
+            var options = {
+                float: true
+            };
+            $('.grid-stack').gridstack(options);
+            new function () {
+                this.grid = $('.grid-stack').data('gridstack');
+                this.addNewWidget = function () {
+                    this.grid.addWidget($('<div><div class="grid-stack-item-content"><input type="text"></div><div/>'), 0, 0, 2, 0.5);
+                	return false;
+                }.bind(this);
+                
+               	$('#add-new-widget').click(this.addNewWidget);
+
+            };
+
+            
+        });
+
+
+    </script>
 </body>
 </html>
