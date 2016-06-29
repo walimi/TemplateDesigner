@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two grids demo</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.css"/>
+    <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack-extra.css"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <script src="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.js"></script>
+
+
+    <style type="text/css">
+        #grid1 {
+            background: lightgoldenrodyellow;
+        }
+        #grid2 {
+            background: lightcyan;
+        }
+        .grid-stack-item-content {
+            color: #2c3e50;
+            text-align: center;
+            background-color: #18bc9c;
+        }
+        #grid2 .grid-stack-item-content {
+            background-color: #9caabc;
+        }
+        .grid-stack-item-removing {
+            opacity: 0.5;
+        }
+
+        .sidebar .grid-stack-item {
+            width: 200px;
+            height: 100px;
+            border: 2px dashed green;
+            text-align: center;
+            line-height: 100px;
+            z-index: 10;
+            background: rgba(0, 255, 0, 0.1);
+            cursor: default;
+            display: inline-block;
+        }
+        .sidebar .grid-stack-item .grid-stack-item-content {
+            background: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Template Designer Demo</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="grid-stack grid-stack-6" id="grid1">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="grid-stack grid-stack-6" id="grid2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(function () {
+            var options = {
+                width: 6,
+                float: false,
+                removeTimeout: 100,
+                acceptWidgets: '.grid-stack-item'
+            };
+            $('#grid1').gridstack(options);
+            $('#grid2').gridstack(_.defaults({
+                float: true
+            }, options));
+            var items = [
+                {x: 0, y: 0, width: 2, height: 2},
+                {x: 3, y: 1, width: 1, height: 2},
+                {x: 4, y: 1, width: 1, height: 1},
+                {x: 2, y: 3, width: 3, height: 1},
+                {x: 2, y: 5, width: 1, height: 1}
+            ];
+            var outerCount = 0;	
+            $('.grid-stack').each(function () {
+            	outerCount++;
+                var grid = $(this).data('gridstack');
+                var innerCount = 0;
+                _.each(items, function (node) {
+
+                	innerCount++;
+                    grid.addWidget($('<div><div class="grid-stack-item-content">' + outerCount + '.' + innerCount + '</div><div/>'), node.x, node.y, node.width, node.height);
+                }, this);
+            });
+
+            $('.sidebar .grid-stack-item').draggable({
+                revert: 'invalid',
+                handle: '.grid-stack-item-content',
+                scroll: false,
+                appendTo: 'body'
+            });
+        });
+    </script>
+</body>
+</html>
