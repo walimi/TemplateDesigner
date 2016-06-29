@@ -13,49 +13,16 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.css"/>
     <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack-extra.css"/>
+    <link rel="stylesheet" href="//localhost/ExampleCode/TemplateDesigner/template_designer.css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
     <script src="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.js"></script>
+    <script src="//localhost/ExampleCode/TemplateDesigner/template_designer.js"></script>
 
 
-    <style type="text/css">
-        #grid1 {
-            background: lightgoldenrodyellow;
-            border: dashed 2px;
-            height: 800px;
-        }
-        #grid2 {
-            background: lightcyan;
-            border: dashed 2px;
-        }
-        .grid-stack-item-content {
-            color: #2c3e50;
-            text-align: center;
-            background-color: #18bc9c;
-        }
-        #grid2 .grid-stack-item-content {
-            background-color: #9caabc;
-        }
-
-
-        .sidebar .grid-stack-item {
-            width: 200px;
-            height: 100px;
-            border: 2px dashed green;
-            text-align: center;
-            line-height: 100px;
-            z-index: 10;
-            background: rgba(0, 255, 0, 0.1);
-            cursor: default;
-            display: inline-block;
-        }
-        .sidebar .grid-stack-item .grid-stack-item-content {
-            background: none;
-        }
-    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -71,35 +38,5 @@
             </div>
         </div>
     </div>
-
-
-    <script type="text/javascript">
-        $(function () {
-            var options = {
-                width: 6,
-                float: false,
-                removeTimeout: 100,
-                acceptWidgets: '.grid-stack-item'
-            };
-            $('#grid1').gridstack(options);
-            $('#grid2').gridstack(_.defaults({
-                float: false
-            }, options));
-
-            var outerCount = 0;	
-            $('.grid-stack').each(function () {
-            	outerCount++;
-                var grid = $(this).data('gridstack');
-                grid.addWidget($('<div><div class=grid-stack-item-content>Hello world</div></div>'), 0, 0, 2, 1)
-            });
-            
-            $('.sidebar .grid-stack-item').draggable({
-                revert: 'valid',
-                handle: '.grid-stack-item-content',
-                scroll: false,
-                appendTo: 'body'
-            });
-        });
-    </script>
 </body>
 </html>
