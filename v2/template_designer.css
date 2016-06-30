@@ -1,9 +1,10 @@
 .grid-stack {
-    background: lightgoldenrodyellow;
+    background: white;
     border: solid 1px;
 }
 
 .components {
     border: solid 1px;
     border-radius: 10px;
-}	
+}
+	
