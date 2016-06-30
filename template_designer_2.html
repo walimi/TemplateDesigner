@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Float grid demo</title>
+    <title>Template Designer 2</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//localhost/ExampleCode/gridStackExample/node_modules/gridstack/dist/gridstack.css"/>
@@ -25,21 +25,37 @@
     <style type="text/css">
         .grid-stack {
             background: lightgoldenrodyellow;
+            border: dashed 1px;
         }
 
     </style>
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Float grid demo</h1>
+        <h1>Template Designer Demo</h1>
+        <div class="row">
+            <div class="col-md-1">
+               <div class="row">
+               		<div class="col-sm-12">
+            			<a class="btn btn-small" id="add-new-header" href="#">Add Header</a>
+            		</div>
+        		</div>
+        		<div class="row">
+               		<div class="col-sm-12">
+            			<a class="btn btn-small" id="add-new-text" href="#">Add Text</a>
+            		</div>
+        		</div>
+        		<div class="row">
+               		<div class="col-sm-12">
+            			<a class="btn btn-small" id="add-new-divider" href="#">Add Divider</a>
+            		</div>
+        		</div>
 
-        <div>
-            <a class="btn btn-default" id="add-new-widget" href="#">Add Header</a>
-        </div>
-
-        <br/>
-
-        <div class="grid-stack">
+            </div>
+            <div class="col-md-9">
+                <div class="grid-stack">
+        		</div>
+            </div>
         </div>
     </div>
 
@@ -53,11 +69,11 @@
             new function () {
                 this.grid = $('.grid-stack').data('gridstack');
                 this.addNewWidget = function () {
-                    this.grid.addWidget($('<div><div class="grid-stack-item-content"><input type="text"></div><div/>'), 0, 0, 2, 0.5);
+                    this.grid.addWidget($('<div><div class="grid-stack-item-content"><input type="text" class="form-control"></div><div/>'), 0, 0, 2, 1);
                 	return false;
                 }.bind(this);
                 
-               	$('#add-new-widget').click(this.addNewWidget);
+               	$('#add-new-header').click(this.addNewWidget);
 
             };
 
