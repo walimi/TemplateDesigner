@@ -17,18 +17,18 @@
     $(function() {
       $("#draggable").draggable({
         helper: 'clone',
-        cursor: 'move',
-        containment: '#droppable'
+        cursor: 'move'
       });
   
       $( "#droppable" ).droppable({
         tolerance: 'fit',
         drop: function(event, ui){
               $("<div></div>")
-                  .html("<input type='text' class='form-control'>")
-                  .appendTo($(this));
+              .html("<input type='text' id='header' class='form-control'>")
+              .appendTo($(this));
         }
       });
+
     });
   </script>
 </head>
