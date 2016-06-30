@@ -17,15 +17,16 @@
     $(function() {
       $("#draggable").draggable({
         helper: 'clone',
-        cursor: 'move'
+        cursor: 'move',
+        containment: '#droppable'
       });
   
       $( "#droppable" ).droppable({
-        drop: function( event, ui ) {
-          $( this )
-            .find( "p" )
-            .html(ui.draggable.text())
-            .appendTo($(this));
+        tolerance: 'fit',
+        drop: function(event, ui){
+              $("<div></div>")
+                  .html("<input type='text' class='form-control'>")
+                  .appendTo($(this));
         }
       });
     });
@@ -46,7 +47,7 @@
         </div>
         <div class="col-md-9">
           <div id="droppable" class="ui-widget-header">
-            <p>Drop here</p>
+            
           </div>
         </div>
     </div>
