@@ -40,8 +40,27 @@ h1 {
 	border: 1px solid;
 }
 
+.component-heading {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+
+.input-no-border {
+	 border: 1px solid white;
+}
+
 #droppable { width: 800px; height: 1200px; padding: 0.5em; float: left; margin: 10px; }
 
 .page-container { background: white; }
 
 #header { background-color: white; }
+
+
+
