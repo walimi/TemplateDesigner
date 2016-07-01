@@ -1,7 +1,43 @@
-.components { 
+h1 {
+	padding: 5px;
+}
+
+.emphasis {
+	font-weight: bold;
+	font-family: 'Comic Sans';
+}
+
+.components-container, .properties-container {
+	margin: 10px 2px 2px 0;
+}
+
+.properties-container {
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+.component-item { 
   width: 100px; 
-  height: 100px; 
-  padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  height: 30px; 
+  padding: 0.5em; 
+  float: left; 
+  margin: 2px 2px 2px 0; 
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+.property-item {  
+  padding: 0.5em; 
+  float: left; 
+  margin: 2px 2px 2px 0;
+}
+
+.component-content {
+	align-content: center;
+}
+
 #droppable { width: 800px; height: 1200px; padding: 0.5em; float: left; margin: 10px; }
+
 .page-container { background: white; }
+
 #header { background-color: white; }

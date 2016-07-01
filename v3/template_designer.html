@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Droppable - Default functionality</title>
+  <title>Template Designer - Using jQuery</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="template_designer.css">
@@ -15,21 +15,84 @@
 
 <body>
   <div class="container-fluid">
-    <h1>Template Designer - Using jQuery UI</h1>
+    <div class="row">
+      <h1><span class="emphasis">Very, Very, Very</span> Rudimentary Template Designer (Using jQuery UI)</h1>
+    </div>
     <div class="row">
         <div class="col-md-1">
         </div>
 
-        <div class="col-md-1">
-          <div id="draggable-header" class="components">
-            <p>Header</p>
+        <div class="col-md-1 components-container">
+          <div class="row">
+            <div id="draggable-heading" class="component-item">
+              <p class="component-content">Heading</p>
+            </div>
           </div>
+
+          <div class="row">
+            <div id="draggable-text" class="component-item">
+              <p class="component-content">Text</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="draggable-image" class="component-item">
+              <p class="component-content">Image</p>
+            </div>
+          </div>
+          <div class="row">
+            <div id="draggable-table" class="component-item">
+              <p class="component-content">Table</p>
+            </div>
+          </div>
+          <div class="row">
+            <div id="draggable-pricing-table" class="component-item">
+              <p class="component-content">Pricing Table</p>
+            </div>
+          </div>  
         </div>
-        <div class="col-md-9">
+        <div class="col-md-7">
           <div id="droppable" class="ui-widget-header page-container">
             
           </div>
         </div>
+
+        <div class="col-md-2 properties-container">
+          <div class="row">
+            <div class="property-item">
+              <label for="font-family">Font family:</label>
+              <select name="font-family">
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Courier">Courier</option>
+                <option value="Sans Serif">Sans Serif</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="property-item">
+              <label for="header-size">Heading size:</label>
+              <select name="header-size">
+                <option value="H1">H1</option>
+                <option value="H2">H2</option>
+                <option value="H3">H3</option>
+                <option value="H4">H4</option>
+                <option value="H5">H5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="property-item">
+              <label for="Upload-image">Upload image:</label>
+              <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-1">
+        </div>
+
     </div>
   </div>
 </body>

@@ -1,5 +1,5 @@
 $(function() {
-  $("#draggable-header").draggable({
+  $(".component-item").draggable({
     helper: 'clone',
     cursor: 'move'
   });
