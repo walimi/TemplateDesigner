@@ -20,45 +20,46 @@
       <h1><span class="emphasis">Very, Very, Very</span> Rudimentary Template Designer (Using jQuery UI)</h1>
     </div>
     <div class="row">
-        <div class="col-md-1">
-        </div>
+      <div class="col-md-1">
+      </div>
 
-        <div class="col-md-1 components-container">
-          <div class="row">
-            <div id="draggable-heading" class="component-item">
-              <p class="component-content">Heading</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div id="draggable-text" class="component-item">
-              <p class="component-content">Text</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div id="draggable-image" class="component-item">
-              <p class="component-content">Image</p>
-            </div>
-          </div>
-          <div class="row">
-            <div id="draggable-table" class="component-item">
-              <p class="component-content">Table</p>
-            </div>
-          </div>
-          <div class="row">
-            <div id="draggable-pricing-table" class="component-item">
-              <p class="component-content">Pricing Table</p>
-            </div>
-          </div>  
-        </div>
-        <div class="col-md-7">
-          <div id="droppable" class="ui-widget-header page-container">
-            
+      <div class="col-md-1 components-container">
+        <div class="row">
+          <div id="draggable-heading" class="component-item">
+            <p class="component-content">Heading</p>
           </div>
         </div>
 
-        <div class="col-md-2 properties-container" id="properties-container">
+        <div class="row">
+          <div id="draggable-text" class="component-item">
+            <p class="component-content">Text</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="draggable-image" class="component-item">
+            <p class="component-content">Image</p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="draggable-table" class="component-item">
+            <p class="component-content">Table</p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="draggable-pricing-table" class="component-item">
+            <p class="component-content">Pricing Table</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div id="droppable" class="ui-widget-header page-container">
+
+        </div>
+      </div>
+
+      <div class="col-md-2 properties-container" id="properties-container">
+        <div id="heading-properties">
           <div class="row">
             <div class="property-item">
               <label for="font-family">Font family:</label>
@@ -83,6 +84,15 @@
             </div>
           </div>
 
+          <div class="row"></div>
+          <div class="row">
+            <div class="property-item">
+              <input type="button" value="Delete Heading" id="delete-component" />
+            </div>
+          </div>
+
+        </div>
+        <div id="image-properties">
           <div class="row">
             <div class="property-item">
               <label for="Upload-image">Upload image:</label>
@@ -92,12 +102,14 @@
           <div class="row"></div>
           <div class="row">
             <div class="property-item">
-              <input type="button" value="Delete" id="delete-component" />
+              <input type="button" value="Delete Image" id="delete-component" />
             </div>
           </div>
         </div>
-        <div class="col-md-1">
-        </div>
+      </div>
+
+      <div class="col-md-1">
+      </div>
 
     </div>
   </div>
