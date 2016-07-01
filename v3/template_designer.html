@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="template_designer.css">
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -17,7 +18,7 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <h1><span class="emphasis">Very, Very, Very</span> Rudimentary Template Designer (Using jQuery UI)</h1>
+      <h1><span class="emphasis">Very, Very, Very...</span> Rudimentary Template Designer (Using jQuery UI)</h1>
     </div>
     <div class="row">
       <div class="col-md-1">
@@ -38,7 +39,7 @@
 
         <div class="row">
           <div id="draggable-image" class="component-item">
-            <p class="component-content">Image</p>
+            <div class="fa fa-file-photo-o" style="font-size:36px"></div>
           </div>
         </div>
         <div class="row">
@@ -63,9 +64,9 @@
           <div class="row">
             <div class="property-item">
               <label for="font-family">Font family:</label>
-              <select name="font-family">
+              <select name="font-family" id="heading-font">
                 <option value="Arial">Arial</option>
-                <option value="Verdana">Verdana</option>
+                <option value="Verdana"selected >Verdana</option>
                 <option value="Courier">Courier</option>
                 <option value="Sans Serif">Sans Serif</option>
               </select>
