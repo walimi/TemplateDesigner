@@ -6,31 +6,11 @@
   <title>jQuery UI Droppable - Default functionality</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="template_designer.css">
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <style>
-    #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-    #droppable { width: 800px; height: 1200px; padding: 0.5em; float: left; margin: 10px; }
-  </style>
-  <script>
-    $(function() {
-      $("#draggable").draggable({
-        helper: 'clone',
-        cursor: 'move'
-      });
-  
-      $( "#droppable" ).droppable({
-        tolerance: 'fit',
-        drop: function(event, ui){
-              $("<div></div>")
-              .html("<input type='text' id='header' class='form-control'>")
-              .appendTo($(this));
-        }
-      });
-
-    });
-  </script>
+  <script src="template_designer.js"></script>
 </head>
 
 <body>
@@ -41,12 +21,12 @@
         </div>
 
         <div class="col-md-1">
-          <div id="draggable" class="ui-widget-content">
+          <div id="draggable-header" class="components">
             <p>Header</p>
           </div>
         </div>
         <div class="col-md-9">
-          <div id="droppable" class="ui-widget-header">
+          <div id="droppable" class="ui-widget-header page-container">
             
           </div>
         </div>

@@ -1,0 +1,7 @@
+.components { 
+  width: 100px; 
+  height: 100px; 
+  padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+#droppable { width: 800px; height: 1200px; padding: 0.5em; float: left; margin: 10px; }
+.page-container { background: white; }
+#header { background-color: white; }
