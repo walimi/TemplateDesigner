@@ -36,6 +36,10 @@ h1 {
 	align-content: center;
 }
 
+.component-table {
+	border: 1px solid;
+}
+
 #droppable { width: 800px; height: 1200px; padding: 0.5em; float: left; margin: 10px; }
 
 .page-container { background: white; }
