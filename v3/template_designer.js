@@ -3,7 +3,7 @@ $(function () {
   $("#image-properties").hide();
 
 
-  $(".component-item").draggable({
+  $(".draggable-item").draggable({
     helper: 'clone',
     cursor: 'move'
   });
@@ -13,7 +13,7 @@ $(function () {
     drop: function (event, ui) {
       var componentType = ui.draggable.attr("id");
 
-      $("<div></div>")
+      $("<div class='dragged-component'></div>")
         .html(componentCreated(componentType))
         .appendTo($(this));
 
@@ -31,7 +31,7 @@ $(function () {
         $("#image-properties").hide();
         return "<input type='text' id='component-heading' class='component-heading'>";
       case 'draggable-text':
-        return "<input type='text' id='component-text' class='form-control'>";
+        return "<textarea rows='4' columns='50' id='component-text' class='form-control'>";
       case 'draggable-image':
         $("#heading-properties").hide();
         $("#image-properties").show();
@@ -47,7 +47,7 @@ $(function () {
 
   $("#heading-font").on("change", function () {
     var selectedFontFamily = $('#heading-font option:selected').text();
-    console.log("heading font changed to " + selectedFontFamily);
+    console.log("Heading font changed to " + selectedFontFamily);
   });
 
   $("#component-image").click(function () {
@@ -56,11 +56,6 @@ $(function () {
     $("#image-properties").show();
   });
 
-  $(".btn").click(function() {
-    var el = $("#droppable");
-    var id = el.activeElement.id;
-    console.log("Active element is " + id);
-    $("#" + id).hide();
-  });
+  console.log("Active element is " + document.activeElement.tagName);
 
-}); // End IIFE
+}); // end jQuery onload.
