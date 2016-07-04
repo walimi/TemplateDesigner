@@ -56,4 +56,11 @@ $(function () {
     $("#image-properties").show();
   });
 
-});
+  $(".btn").click(function() {
+    var el = $("#droppable");
+    var id = el.activeElement.id;
+    console.log("Active element is " + id);
+    $("#" + id).hide();
+  });
+
+}); // End IIFE
